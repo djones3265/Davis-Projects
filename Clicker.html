@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div style="text-align: center">
+        
+        <p class="subtitle">Click the button to increase the count</p>
+        <h2 class="count">Count: 0</h2>
+        <button onclick="increaseCount()">
+            <img class="image" src="cookie.png">    
+        </button>
+       
+    </div>
+</body>
+
+<style>
+    .image {
+        width: 350px;
+        height: 350px;
+    }
+
+    .count {
+        font-size: 30px;
+        font-family: Arial, sans-serif;
+    }
+</style>
+
+<script>
+    var count = 0;
+    function increaseCount() {
+        count++;
+        document.querySelector('.count').innerHTML = "Count: " + count;
+    }
+   
+   
+</script>
+</html>
