@@ -1,17 +1,16 @@
+import sys
+import matplotlib
+matplotlib.use('Agg')
+
 import pandas as pd
+import matplotlib.pyplot as plt
 
-# Replace 'your_file.xlsx' with the actual filename of your Excel file
-filename = 'Book1.xlsx'
+df = pd.read_csv('data.csv')
 
-# Replace 'sheet_name' with the name of the sheet you want to analyze (optional)
-sheet_name = None  # If unspecified, reads the first sheet
+df.plot()
 
-# Read the Excel file into a Pandas DataFrame
-df = pd.read_excel(filename, sheet_name=sheet_name)
+plt.show()
 
-# Get maximum values in each column
-max_values = df.max(axis=0)
-
-# Print the maximum values
-print("Maximum values in each column:")
-print(max_values)
+#Two  lines to make our compiler able to draw:
+plt.savefig(sys.stdout.buffer)
+sys.stdout.flush()
